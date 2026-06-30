@@ -81,9 +81,6 @@ To access SCUM.db directly (an occasional access error may occur due to file loc
 * Windows:
    (Not tested.) Ensure the web server user has read access to the SaveFiles directory and its files.
 
-* Once permissions are set:
-   Set $dbPath in coords.php to the direct path of SCUM.db on your server.
-
 * To use crontab to bypass permission issues (copies SCUM.db once a minute):
 ```bash
    sudo crontab -e
@@ -93,7 +90,15 @@ To access SCUM.db directly (an occasional access error may occur due to file loc
 
 * Set $dbPath in coords.php to the copied file location:
 ```php
-   $dbPath = '/home/<user>/SCUM.db';
+<?php
+# coords.php
+
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *'); 
+
+# Set this variable to point to the SCUM.db file you are working with
+$dbPath = '/<location_of_SCUM_database_file>/SCUM.db';
+
 ```
 
 # Have Fun!
