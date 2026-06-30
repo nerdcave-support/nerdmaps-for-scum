@@ -5,11 +5,12 @@
 * Tools:		Notepad++ v8.9.2, Claude Sonnet 4.6
 * License:	Public Domain
 
-
 # Summary:
    A self-hosted web-based live map tool for SCUM dedicated servers.
    Displays player positions, supports shared map markers (vehicles, fuel, weapons, and more), location pings, sector grid overlay, and per-player follow/hide controls.
    Built with PHP, SQLite, and vanilla JS. Requires access to the SCUM server's SCUM.db file. Player positions update approximately once per minute.
+
+![Nerdmaps for SCUM screenshot](https://nerdcave.net/assets/projects/20260630-84b4c93a482d.png)
 
 # Description:
    The SCUM in-game map offers no player tracking or map markers, so I built this project to fill that gap.
