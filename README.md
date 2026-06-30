@@ -81,7 +81,7 @@ To access SCUM.db directly (an occasional access error may occur due to file loc
 * Windows:
    (Not tested.) Ensure the web server user has read access to the SaveFiles directory and its files.
 
-* To use crontab to bypass permission issues (copies SCUM.db once a minute):
+* To use crontab to bypass permission issues (copies SCUM.db once a minute).  In this case I'm using AMP server manager for my SCUM dedicated game server.  You're file location may be different so you will need to alter the source and target parameters for the copy command:
 ```bash
    sudo crontab -e
    # Add the following entry:
