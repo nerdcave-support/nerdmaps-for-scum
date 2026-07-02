@@ -70,25 +70,14 @@ To access SCUM.db directly (an occasional access error may occur due to file loc
 * Linux (using AMP server manager):
    The minimal permission needed is execute on the SaveFiles parent directory:
 ```bash
-   sudo chmod o+x /home/amp/.ampdata/instances/<instance_name>/scum/3792580/SCUM/Saved/SaveFiles
-```
-
-   If you prefer the quick-and-easy approach (less secure, home server only):
-```bash
-   sudo chmod 777 -R /home/amp/.ampdata/instances/<instance_name>/scum/3792580/SCUM/Saved/SaveFiles
+   sudo chmod o+x /home/amp
+   sudo chmod o+x /home/amp/.ampdata/instances/<instance_name>
 ```
 
 * Windows:
    (Not tested.) Ensure the web server user has read access to the SaveFiles directory and its files.
 
-* To use crontab to bypass permission issues (copies SCUM.db once a minute).  In this case I'm using AMP server manager for my SCUM dedicated game server.  You're file location may be different so you will need to alter the source and target parameters for the copy command:
-```bash
-   sudo crontab -e
-   # Add the following entry:
-   * * * * * cp /home/amp/.ampdata/instances/<instance_name>/scum/3792580/SCUM/Saved/SaveFiles/SCUM.db /home/<user>/SCUM.db && chown <user>:<user> /home/<user>/SCUM.db
-```
-
-* Set $dbPath in coords.php to the copied file location:
+* Make sure $dbPath in coords.php is set to the SCUM.db file location:
 ```php
 <?php
 # coords.php
